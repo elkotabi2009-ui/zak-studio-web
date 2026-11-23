@@ -1,0 +1,11 @@
+# Cron schedule for daily dispatch
+# Add to crontab: crontab -e
+
+# Daily send at 8:00 AM (adjust timezone as needed)
+0 8 * * * cd C:\Users\asus\Desktop\progetto zak studio web && python sender_daemon.py >> logs/sender_$(date +\%Y\%m\%d).log 2>&1
+
+# Weekly report every Monday 9:00 AM
+0 9 * * 1 cd C:\Users\asus\Desktop\progetto zak studio web && python -m email_dispatcher --weekly-report --start $(date -d 'last monday' +\%Y-\%m-\%d) --end $(date -d 'sunday' +\%Y-\%m-\%d) --output reports/weekly_$(date +\%Y\%m\%d).md
+
+# Monthly suppression sync (1st of month)
+0 10 1 * * cd C:\Users\asus\Desktop\progetto zak studio web && python -m email_dispatcher --sync-suppression --direction esp_to_local

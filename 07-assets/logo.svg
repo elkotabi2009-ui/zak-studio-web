@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Background rounded square -->
+  <rect width="120" height="120" rx="24" fill="#1a3c5e"/>
+  <!-- ZAK mark - upward arrow/check symbol -->
+  <g transform="translate(60, 60)">
+    <path d="M-20 15 L0 -15 L20 15 L5 -15"
+          stroke="#ffffff" stroke-width="6" fill="none"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Subtle accent line -->
+    <path d="M-25 5 L25 5"
+          stroke="#e86c00" stroke-width="3"
+          stroke-linecap="round" opacity="0.9"/>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "buildCommand": "pip install -r requirements.txt && pip install httpx pyyaml python-dotenv jinja2 google-api-python-client google-auth google-auth-httplib2",
+  "installCommand": "pip install -r requirements.txt && pip install httpx pyyaml python-dotenv jinja2 google-api-python-client google-auth google-auth-httplib2",
+  "devCommand": "python api/handler.py",
+  "framework": null,
+  "functions": {
+    "api/handler.py": {
+      "runtime": "python3.11",
+      "maxDuration": 30
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/webhooks/email/(.*)",
+      "dest": "/api/handler.py"
+    },
+    {
+      "src": "/webhooks/email/(.*)",
+      "dest": "/api/handler.py"
+    },
+    {
+      "src": "/health",
+      "dest": "/api/handler.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/handler.py"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type, Authorization, X-Agentmail-Signature, X-Resend-Signature"
+        }
+      ]
+    }
+  ],
+  "env": {
+    "PYTHONPATH": "."
+  }
+}

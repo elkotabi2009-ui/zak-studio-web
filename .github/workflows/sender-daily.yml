@@ -1,0 +1,88 @@
+name: Daily Cold Email Sender
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Ogni giorno ore 08:00 UTC = 10:00 ITA
+  workflow_dispatch:  # Permette lancio manuale da UI GitHub
+
+permissions:
+  contents: read
+
+jobs:
+  send-daily-batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # Tutte le env vars (copia da .env in GitHub Secrets)
+      AGENTMAIL_API_KEY: ${{ secrets.AGENTMAIL_API_KEY }}
+      AGENTMAIL_WEBHOOK_SECRET: ${{ secrets.AGENTMAIL_WEBHOOK_SECRET }}
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      RESEND_WEBHOOK_SECRET: ${{ secrets.RESEND_WEBHOOK_SECRET }}
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+      UNSUB_SECRET: ${{ secrets.UNSUB_SECRET }}
+      GOOGLE_SHEETS_CREDENTIALS: ${{ secrets.GOOGLE_SHEETS_CREDENTIALS }}
+      USER_IBAN: ${{ secrets.USER_IBAN }}
+      BANK_NAME: ${{ secrets.BANK_NAME }}
+      ACCOUNT_HOLDER: ${{ secrets.ACCOUNT_HOLDER }}
+      COMPANY_LEGAL_NAME: ${{ secrets.COMPANY_LEGAL_NAME }}
+      COMPANY_ADDRESS: ${{ secrets.COMPANY_ADDRESS }}
+      COMPANY_VAT: ${{ secrets.COMPANY_VAT }}
+      COMPANY_REA: ${{ secrets.COMPANY_REA }}
+      LANDING_PAGE_PRICE_EUR: ${{ secrets.LANDING_PAGE_PRICE_EUR }}
+      VAT_RATE: ${{ secrets.VAT_RATE }}
+      PAYMENT_TERMS_DAYS: ${{ secrets.PAYMENT_TERMS_DAYS }}
+      FORMSPREE_FORM_ID: ${{ secrets.FORMSPREE_FORM_ID }}
+      CRON_SECRET: ${{ secrets.CRON_SECRET }}
+      APIFY_API_TOKEN: ${{ secrets.APIFY_API_TOKEN }}
+      ZEROBOUNCE_API_KEY: ${{ secrets.ZEROBOUNCE_API_KEY }}
+      PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+      CALENDLY_USERNAME: ${{ secrets.CALENDLY_USERNAME }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install httpx pyyaml python-dotenv jinja2
+
+      - name: Verify critical configs
+        run: |
+          python -c "
+          import os
+          required = ['AGENTMAIL_API_KEY', 'RESEND_API_KEY', 'NETLIFY_AUTH_TOKEN',
+                      'GOOGLE_SHEETS_CREDENTIALS', 'USER_IBAN', 'UNSUB_SECRET']
+          missing = [k for k in required if not os.getenv(k)]
+          if missing:
+              print(f'MISSING: {missing}')
+              exit(1)
+          print('All critical env vars present')
+          "
+
+      - name: Run daily sender daemon
+        run: |
+          python sender_daemon.py
+        continue-on-error: false
+
+      - name: Upload logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sender-logs-failure
+          path: |
+            logs/
+            *.log
+          retention-days: 7
+
+      - name: Notify on failure (optional - add Slack/Discord webhook)
+        if: failure()
+        run: |
+          echo "::error::Daily sender failed. Check GitHub Actions logs."

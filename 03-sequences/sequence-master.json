@@ -1,0 +1,251 @@
+{
+  "sequence_name": "ZAK Studio Web — Cold Outreach B2B 2026",
+  "version": "1.0",
+  "created": "2026-11-21",
+  "description": "Sequenza 6-step cold email per vendita servizi creazione siti web a 200 aziende target ICP",
+  "trigger": "Prospect added to outreach list (CSV import) — ICP match confirmed",
+  "goal": "Book discovery call (15 min) → qualify → close deal",
+  "length": 6,
+  "timing": {
+    "email_1": { "day": 1, "gap_days": 0 },
+    "email_2": { "day": 4, "gap_days": 3 },
+    "email_3": { "day": 9, "gap_days": 5 },
+    "email_4": { "day": 16, "gap_days": 7 },
+    "email_5": { "day": 25, "gap_days": 9 },
+    "email_6_breakup": { "day": 35, "gap_days": 10 }
+  },
+  "exit_conditions": [
+    "Reply received (any classification except spam_complaint)",
+    "Meeting booked (Calendly/Cal.com)",
+    "Unsubscribe clicked",
+    "Hard bounce",
+    "Spam complaint",
+    "Manual opt-out via DSAR",
+    "Sequence completed (day 35)"
+  ],
+  "branching_logic": {
+    "reply_interested": { "action": "stop_sequence", "next_step": "sales_handoff" },
+    "reply_not_interested": { "action": "stop_sequence", "next_step": "log_lost_reason" },
+    "reply_referral": { "action": "stop_sequence", "next_step": "contact_referred_person" },
+    "reply_unsubscribe": { "action": "stop_sequence", "next_step": "suppression_list_add" },
+    "meeting_booked": { "action": "stop_sequence", "next_step": "sales_handoff" },
+    "no_reply_continue": { "action": "send_next_email" }
+  },
+  "emails": [
+    {
+      "step": 1,
+      "name": "First Touch — Trigger + Pain + Ask",
+      "day": 1,
+      "angle": "trigger_pain_ask",
+      "subject_lines": [
+        "vostro sito 2019",
+        "nuova linea presse",
+        "quick question"
+      ],
+      "subject_line_selected": null,
+      "body_template": "{{personalization_hook}} — il sito attuale comunica ancora il catalogo 2019 mentre avete appena presentato la nuova gamma presse a EMO Hannover.\n\nCostruiamo siti per aziende come la vostra (manifatturiero 20-50 dip, export-focused) che trasformano il sito da \"vetrina\" a canale lead: l'ultimo cliente simile, Metalpress Vicenza, passa da 0 a 14 richieste qualificate/mese in 90 giorni.\n\nVale la pena una call 15 min giovedì per vedere se ha senso per voi?\n\n—\n{{sender_name}} — ZAK Studio Web\n{{sender_email}}\n\nSe non vuoi più ricevere queste email: https://unsubscribe.zakstudio.com/?h={{unsubscribe_hash}}\n\nZAK Studio Web di {{sender_legal_name}} — {{sender_address}} — P.IVA {{sender_vat}} — REA {{sender_rea}} — Privacy: https://zakstudio.com/privacy",
+      "cta": "Vale la pena una call 15 min giovedì per vedere se ha senso per voi?",
+      "cta_type": "direct_question_meeting",
+      "personalization_fields": [
+        "personalization_hook",
+        "sender_name",
+        "sender_email",
+        "sender_legal_name",
+        "sender_address",
+        "sender_vat",
+        "sender_rea",
+        "unsubscribe_hash"
+      ],
+      "max_words": 150,
+      "analyzer_score": null,
+      "status": "draft"
+    },
+    {
+      "step": 2,
+      "name": "Follow-up — Case Study Rilevante",
+      "day": 4,
+      "angle": "case_study_social_proof",
+      "subject_lines": [
+        "Metalpress Vicenza: +14 lead/mese",
+        "case study manifatturiero",
+        "risultati sito web B2B"
+      ],
+      "subject_line_selected": null,
+      "body_template": "Visto che operate nel manifatturiero ({{sector}}, {{employees}} dip), vi mando un riferimento concreto.\n\nMetalpress Vicenza (stesso settore, 35 dip) aveva lo stesso problema: sito vetrina vecchio, zero inbound, agenti che perdevano tempo su lead freddi.\n\nNuovo sito + landing per campagne Google Ads → da 0 a 14 richieste qualificate/mese in 90 giorni. CAC -40%.\n\nIl case study completo (1 pagina): https://zakstudio.com/case-studies/metalpress.pdf\n\nHa 15 min per vedere se lo stesso approccio funziona per {{company_name}}?\n\n—\n{{sender_name}} — ZAK Studio Web\n{{sender_email}}\n\nSe non vuoi più ricevere queste email: https://unsubscribe.zakstudio.com/?h={{unsubscribe_hash}}\n\nZAK Studio Web di {{sender_legal_name}} — {{sender_address}} — P.IVA {{sender_vat}} — REA {{sender_rea}} — Privacy: https://zakstudio.com/privacy",
+      "cta": "Ha 15 min per vedere se lo stesso approccio funziona per {{company_name}}?",
+      "cta_type": "direct_question_meeting",
+      "personalization_fields": [
+        "sector",
+        "employees",
+        "company_name",
+        "sender_name",
+        "sender_email",
+        "sender_legal_name",
+        "sender_address",
+        "sender_vat",
+        "sender_rea",
+        "unsubscribe_hash"
+      ],
+      "max_words": 120,
+      "analyzer_score": null,
+      "status": "draft"
+    },
+    {
+      "step": 3,
+      "name": "Follow-up — Insight Settore / Benchmark",
+      "day": 9,
+      "angle": "industry_insight_benchmark",
+      "subject_lines": [
+        "benchmark siti manifatturiero 2024",
+        "quanto vale un lead qualificato?",
+        "dati export manifatturiero"
+      ],
+      "subject_line_selected": null,
+      "body_template": "Dati recenti Unioncamere/ISTAT: il 68% delle PMI manifatturiere italiane che esportano ha un sito che non genera lead qualificati. Solo vetrina.\n\nLe aziende che investono in sito conversion-focused (landing per campagna, schema.org, speed, mobile-first) vedono in media 3.2x più richieste commerciali qualificate vs sito vetrina classico.\n\nPer {{company_name}} ({{employees}} dip, export {{revenue_est}}), il gap stimato è {{estimated_gap}} lead/mese persi.\n\nVuole il benchmark dettagliato per il vostro settore? Te lo mando via email, 2 pagine.\n\n—\n{{sender_name}} — ZAK Studio Web\n{{sender_email}}\n\nSe non vuoi più ricevere queste email: https://unsubscribe.zakstudio.com/?h={{unsubscribe_hash}}\n\nZAK Studio Web di {{sender_legal_name}} — {{sender_address}} — P.IVA {{sender_vat}} — REA {{sender_rea}} — Privacy: https://zakstudio.com/privacy",
+      "cta": "Vuole il benchmark dettagliato per il vostro settore? Te lo mando via email, 2 pagine.",
+      "cta_type": "direct_question_value_add",
+      "personalization_fields": [
+        "company_name",
+        "employees",
+        "revenue_est",
+        "estimated_gap",
+        "sender_name",
+        "sender_email",
+        "sender_legal_name",
+        "sender_address",
+        "sender_vat",
+        "sender_rea",
+        "unsubscribe_hash"
+      ],
+      "max_words": 120,
+      "analyzer_score": null,
+      "status": "draft"
+    },
+    {
+      "step": 4,
+      "name": "Follow-up — Direct Ask Diverso",
+      "day": 16,
+      "angle": "direct_ask_decision_maker",
+      "subject_lines": [
+        "chi gestisce il sito?",
+        "decisione sito web",
+        "responsabile digital"
+      ],
+      "subject_line_selected": null,
+      "body_template": "Domanda diretta: chi in {{company_name}} decide sul sito web? Titolare, marketing, IT, agenzia esterna?\n\nChiedo perché spesso il collo di bottiglia non è budget o bisogno, ma \"chi porta la pratica avanti\".\n\nSe siete voi: rispondete a questa email e fissiamo 15 min.\nSe è un collega: inoltrare questa email alla persona giusta (basta un nome).\n\nNessun impegno — solo capire se ha senso parlarne ora o tra 6 mesi.\n\n—\n{{sender_name}} — ZAK Studio Web\n{{sender_email}}\n\nSe non vuoi più ricevere queste email: https://unsubscribe.zakstudio.com/?h={{unsubscribe_hash}}\n\nZAK Studio Web di {{sender_legal_name}} — {{sender_address}} — P.IVA {{sender_vat}} — REA {{sender_rea}} — Privacy: https://zakstudio.com/privacy",
+      "cta": "Se siete voi: rispondete e fissiamo 15 min. Se è un collega: inoltrate a chi decide.",
+      "cta_type": "direct_question_referral_or_meeting",
+      "personalization_fields": [
+        "company_name",
+        "sender_name",
+        "sender_email",
+        "sender_legal_name",
+        "sender_address",
+        "sender_vat",
+        "sender_rea",
+        "unsubscribe_hash"
+      ],
+      "max_words": 100,
+      "analyzer_score": null,
+      "status": "draft"
+    },
+    {
+      "step": 5,
+      "name": "Follow-up — Referral Ask",
+      "day": 25,
+      "angle": "referral_reverse_ask",
+      "subject_lines": [
+        "persona giusta per sito web?",
+        "chi decide il digital?",
+        "inoltro interno"
+      ],
+      "subject_line_selected": null,
+      "body_template": "Sarò breve: non sono sicuro di aver raggiunto la persona giusta in {{company_name}} per parlare di sito web.\n\nSe non siete voi il decisore, potreste indicarmi chi lo è? (Nome + ruolo basta)\n\nSe lo siete ma non è priorità ora: none problem — chiudo qui e magari ci risentiamo tra 6 mesi.\n\nRispondete pure a questa email con il nome giusto o \"non ora\".\n\nGrazie per il tempo.\n\n—\n{{sender_name}} — ZAK Studio Web\n{{sender_email}}\n\nSe non vuoi più ricevere queste email: https://unsubscribe.zakstudio.com/?h={{unsubscribe_hash}}\n\nZAK Studio Web di {{sender_legal_name}} — {{sender_address}} — P.IVA {{sender_vat}} — REA {{sender_rea}} — Privacy: https://zakstudio.com/privacy",
+      "cta": "Chi è la persona giusta per decidere sul sito web? Rispondete con nome/ruolo o \"non ora\".",
+      "cta_type": "referral_ask_or_close",
+      "personalization_fields": [
+        "company_name",
+        "sender_name",
+        "sender_email",
+        "sender_legal_name",
+        "sender_address",
+        "sender_vat",
+        "sender_rea",
+        "unsubscribe_hash"
+      ],
+      "max_words": 90,
+      "analyzer_score": null,
+      "status": "draft"
+    },
+    {
+      "step": 6,
+      "name": "Breakup — Chiudi Loop Professionalmente",
+      "day": 35,
+      "angle": "breakup_close_loop",
+      "subject_lines": [
+        "chiudo qui",
+        "ultima email",
+        "non vi disturbo più"
+      ],
+      "subject_line_selected": null,
+      "body_template": "Chiudo qui — non vi disturbo più dopo questa.\n\nSe il sito web diventerà priorità per {{company_name}} in futuro, basta rispondere a questa email e la riprendo io.\n\nSe c'è qualcun altro in azienda con cui ha senso parlare, un nome mi basta.\n\nIn ogni caso: in bocca al lupo per {{trigger_signal}}.\n\n—\n{{sender_name}} — ZAK Studio Web\n{{sender_email}}\n\nSe non vuoi più ricevere queste email: https://unsubscribe.zakstudio.com/?h={{unsubscribe_hash}}\n\nZAK Studio Web di {{sender_legal_name}} — {{sender_address}} — P.IVA {{sender_vat}} — REA {{sender_rea}} — Privacy: https://zakstudio.com/privacy",
+      "cta": "Se diventa priorità, rispondete qui. Se c'è qualcun altro, un nome basta.",
+      "cta_type": "soft_close_referral_or_future",
+      "personalization_fields": [
+        "company_name",
+        "trigger_signal",
+        "sender_name",
+        "sender_email",
+        "sender_legal_name",
+        "sender_address",
+        "sender_vat",
+        "sender_rea",
+        "unsubscribe_hash"
+      ],
+      "max_words": 80,
+      "analyzer_score": null,
+      "status": "draft"
+    }
+  ],
+  "sender_config": {
+    "name": "[Tuo Nome]",
+    "email": "[tuonome]@outreach.zakstudio.com",
+    "legal_name": "[Tuo Nome Cognome / Ragione Sociale]",
+    "address": "Via [Indirizzo], [CAP] [Città]",
+    "vat": "[XXXXXXXXXX]",
+    "rea": "[XX]-[XXXXXX]",
+    "privacy_url": "https://zakstudio.com/privacy",
+    "unsubscribe_base_url": "https://unsubscribe.zakstudio.com/"
+  },
+  "tracking": {
+    "utm_source": "cold_email",
+    "utm_medium": "email",
+    "utm_campaign": "zak_web_outreach_2026",
+    "utm_content": "step_{{step}}",
+    "open_tracking": false,
+    "click_tracking": true
+  },
+  "compliance": {
+    "gdpr_lawful_basis": "legitimate_interest_art_6_1_f",
+    "lia_documented": true,
+    "ropa_updated": true,
+    "dpa_signed_all_processors": true,
+    "unsubscribe_one_click": true,
+    "footer_legal_complete": true,
+    "suppression_list_active": true
+  },
+  "kpi_targets": {
+    "open_rate_min": 0.40,
+    "reply_rate_min": 0.08,
+    "meeting_booked_rate_min": 0.02,
+    "unsubscribe_rate_max": 0.01,
+    "bounce_rate_max": 0.02,
+    "spam_complaint_rate_max": 0.001
+  },
+  "pivot_triggers": {
+    "open_rate_below_30": "Test 3 new subject line variants per email",
+    "reply_rate_below_5": "Rewrite angle/personalization/CTA for underperforming emails",
+    "meeting_rate_below_1": "Review offer/proof/CTA — consider sales-engineer skill",
+    "unsubscribe_above_2": "Pause sending — audit list quality, offer relevance, frequency"
+  }
+}

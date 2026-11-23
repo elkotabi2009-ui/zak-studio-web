@@ -1,0 +1,181 @@
+{
+  "sender": {
+    "name": "Mario Rossi",
+    "role": "Founder & CEO",
+    "email": "mario.rossi@outreach.zakstudio.com",
+    "reply_to": "mario.rossi@zakstudio.com",
+    "company": "ZAK Studio Web S.r.l.",
+    "vat_number": "IT01234567890",
+    "rea": "MI-1234567",
+    "address": "Via delle Industrie 15, 20100 Milano (MI)",
+    "phone": "+39 02 1234 5678",
+    "iban": "IT60X0542811101000000123456",
+    "bic": "BPMOIT22XXX",
+    "bank": "BPER Banca S.p.A.",
+    "pec": "zakstudio@pec.it",
+    "website": "https://zakstudio.com",
+    "linkedin": "https://linkedin.com/in/mariorossi-zak"
+  },
+  "offer": {
+    "base": {
+      "name": "Sito Web Business",
+      "price": 3500,
+      "currency": "EUR",
+      "includes": [
+        "Next.js 14 + Tailwind + TypeScript",
+        "Ghost CMS headless (self-hosted incluso 1 anno)",
+        "Catalogo prodotti/servizi dinamico (max 50 items)",
+        "Schema.org completo (Organization, Product, Service, Breadcrumb)",
+        "Form RFQ con validazione + honeypot + email/CRM",
+        "Core Web Vitals ottimizzati (LCP < 2.5s, CLS < 0.1)",
+        "Deploy Netlify/Vercel + dominio custom + SSL",
+        "Sitemap.xml + robots.txt + meta SEO complete",
+        "Accessibilità WCAG 2.1 AA",
+        "Documentazione + credenziali + 30 gg supporto"
+      ],
+      "timeline_days": 21,
+      "revisions_included": 2
+    },
+    "premium": {
+      "name": "Sito Web Enterprise",
+      "price": 6500,
+      "currency": "EUR",
+      "includes": [
+        "Tutto Incluso in Business",
+        "Multilingua IT/EN (next-intl)",
+        "Blog/Case study illimitati (Ghost CMS)",
+        "Integrazione CRM (HubSpot/Pipedrive/ActiveCampaign)",
+        "Marketing automation (email sequence post-RFQ)",
+        "Analytics avanzato (GA4 + GTM + consent mode v2)",
+        "A/B testing hero + CTA (Vercel Edge Config)",
+        "Monitoring uptime + Core Web Vitals (Checkly)",
+        "Backup giornaliero + disaster recovery",
+        "Supporto prioritario 90 giorni",
+        "Formazione team (2h videocall)",
+        "SEO tecnico avanzato (schema FAQ, HowTo, JobPosting)"
+      ],
+      "timeline_days": 28,
+      "revisions_included": 3
+    },
+    "payment_terms": {
+      "deposit_percent": 40,
+      "balance_on_delivery": true,
+      "installments": {
+        "available": true,
+        "max_months": 6,
+        "interest_free": true
+      },
+      "methods": ["bonifico", "stripe", "satispay"]
+    }
+  },
+  "rates": {
+    "max_emails_per_day": 25,
+    "max_emails_per_recipient_domain_per_day": 3,
+    "delay_min_minutes": 2,
+    "delay_max_minutes": 8,
+    "warmup_weeks": 5,
+    "warmup_schedule": [10, 15, 20, 25, 25],
+    "warmup_start_date": "2024-11-22",
+    "followup_intervals_days": [3, 7, 14, 21],
+    "proposal_expiry_days": 7,
+    "payment_reminder_days": [3, 1, 0]
+  },
+  "domains": {
+    "outreach_domain": "outreach.zakstudio.com",
+    "main_domain": "zakstudio.com",
+    "demo_subdomain_prefix": "demo-zak",
+    "production_subdomain_prefix": "cliente-zak"
+  },
+  "netlify": {
+    "team_name": "zak-studio-web",
+    "site_prefix": "demo-zak",
+    "production_prefix": "cliente-zak",
+    "api_token_env": "NETLIFY_AUTH_TOKEN",
+    "deploy_hook_env": "NETLIFY_DEPLOY_HOOK"
+  },
+  "vercel": {
+    "project_prefix": "zak-webhook",
+    "webhook_project": "zak-webhooks",
+    "api_token_env": "VERCEL_TOKEN",
+    "team_id_env": "VERCEL_TEAM_ID",
+    "region": "fra1"
+  },
+  "calendly": {
+    "username_env": "CALENDLY_USERNAME",
+    "event_type_id_env": "CALENDLY_EVENT_TYPE_ID",
+    "webhook_signing_key_env": "CALENDLY_WEBHOOK_KEY"
+  },
+  "google_sheets": {
+    "spreadsheet_id_env": "GOOGLE_SHEETS_TRACKING_ID",
+    "tabs": [
+      "Leads",
+      "EmailLog",
+      "Demos",
+      "Suppression",
+      "Deals",
+      "Payments",
+      "Deliveries",
+      "OrchestratorLog"
+    ],
+    "service_account_env": "GOOGLE_SHEETS_CREDENTIALS"
+  },
+  "site_builder": {
+    "template_name": "manufacturing-nextjs",
+    "cms": "ghost",
+    "ghost_version": "5.78",
+    "deploy_targets": ["netlify", "vercel"],
+    "default_deploy_target": "netlify",
+    "ghost_hosting": "railway",
+    "sectors": [
+      "presse-idrauliche",
+      "macchine-utensili",
+      "stampaggio-metalli",
+      "automazione-industriale",
+      "componentistica-automotive",
+      "meccanica-precisione",
+      "presse-piegatrici",
+      "torniture-cnc"
+    ],
+    "languages": ["it", "en"],
+    "default_language": "it"
+  },
+  "payment": {
+    "iban_env": "SENDER_IBAN",
+    "stripe_secret_env": "STRIPE_SECRET_KEY",
+    "stripe_webhook_secret_env": "STRIPE_WEBHOOK_SECRET",
+    "stripe_publishable_env": "STRIPE_PUBLISHABLE_KEY",
+    "payment_link_base_url": "https://pay.zakstudio.com",
+    "contract_template": "07-assets/contract-template.md",
+    "proposal_template": "01-config/formal-proposal-template.md"
+  },
+  "agentmail": {
+    "api_key_env": "AGENTMAIL_API_KEY",
+    "webhook_secret_env": "AGENTMAIL_WEBHOOK_SECRET",
+    "from_email": "mario.rossi@outreach.zakstudio.com",
+    "from_name": "Mario Rossi — ZAK Studio Web",
+    "reply_to": "mario.rossi@zakstudio.com",
+    "webhook_url_env": "AGENTMAIL_WEBHOOK_URL"
+  },
+  "firecrawl": {
+    "api_key_env": "FIRECRAWL_API_KEY"
+  },
+  "pagespeed": {
+    "api_key_env": "PAGESPEED_API_KEY"
+  },
+  "apify": {
+    "api_token_env": "APIFY_API_TOKEN"
+  },
+  "composio": {
+    "api_key_env": "COMPOSIO_API_KEY"
+  },
+  "zerobounce": {
+    "api_key_env": "ZEROBOUNCE_API_KEY"
+  },
+  "unsub": {
+    "secret_env": "UNSUB_SECRET",
+    "domain": "unsubscribe.zakstudio.com"
+  },
+  "version": "1.0.0",
+  "built_at": "2024-11-22T18:30:00.000Z",
+  "environment": "production"
+}

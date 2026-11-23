@@ -1,0 +1,19 @@
+{
+  "name": "@zakstudio/vercel-webhooks",
+  "version": "1.0.0",
+  "description": "Vercel webhook endpoints for AgentMail and unsubscribe",
+  "main": "dist/email-webhook.js",
+  "types": "dist/email-webhook.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "deploy": "vercel deploy --prod"
+  },
+  "dependencies": {
+    "next": "^14.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "typescript": "^5.4.0"
+  }
+}

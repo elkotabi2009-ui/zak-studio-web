@@ -1,0 +1,251 @@
+{
+  "description": "Configurazione MCP per skill custom ZAK Studio Web - collega ogni skill ai suoi MCP server",
+  "version": "1.0",
+  "mcp_servers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"],
+      "description": "Browser automation - visita siti, screenshot, estrazione dati",
+      "skills_using": ["lead-analyzer", "web-demo-generator"],
+      "env": {}
+    },
+    "firecrawl": {
+      "command": "npx",
+      "args": ["firecrawl-mcp"],
+      "description": "Web scraping affidabile - crawl, scrape, search",
+      "skills_using": ["lead-analyzer"],
+      "env": {
+        "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
+      }
+    },
+    "agentmail": {
+      "command": "npx",
+      "args": ["@agentmail/mcp"],
+      "description": "Email sending/receiving/webhooks",
+      "skills_using": ["email-dispatcher"],
+      "env": {
+        "AGENTMAIL_API_KEY": "${AGENTMAIL_API_KEY}",
+        "AGENTMAIL_WEBHOOK_SECRET": "${AGENTMAIL_WEBHOOK_SECRET}"
+      }
+    },
+    "sheets": {
+      "command": "npx",
+      "args": ["@googleapis/mcp-sheets"],
+      "description": "Google Sheets read/write per tracking lead",
+      "skills_using": ["email-dispatcher", "lead-analyzer"],
+      "env": {
+        "GOOGLE_SHEETS_CREDENTIALS": "${GOOGLE_SHEETS_CREDENTIALS}"
+      }
+    },
+    "netlify": {
+      "command": "npx",
+      "args": ["netlify-cli", "mcp"],
+      "description": "Deploy static sites (demo live)",
+      "skills_using": ["web-demo-generator"],
+      "env": {
+        "NETLIFY_AUTH_TOKEN": "${NETLIFY_AUTH_TOKEN}"
+      }
+    },
+    "vercel": {
+      "command": "npx",
+      "args": ["vercel", "mcp"],
+      "description": "Deploy alternativo / unsubscribe page",
+      "skills_using": ["web-demo-generator", "email-dispatcher"],
+      "env": {
+        "VERCEL_TOKEN": "${VERCEL_TOKEN}"
+      }
+    },
+    "composio": {
+      "command": "npx",
+      "args": ["@composio/mcp"],
+      "description": "Gateway 1000+ app (backup Google Sheets, Calendly, CRM, ecc.)",
+      "skills_using": ["email-dispatcher", "lead-analyzer"],
+      "env": {
+        "COMPOSIO_API_KEY": "${COMPOSIO_API_KEY}"
+      }
+    },
+    "apify": {
+      "command": "npx",
+      "args": ["apify-cli", "mcp"],
+      "description": "Scraping enterprise (Google Maps, LinkedIn, fiere, directory)",
+      "skills_using": ["lead-analyzer"],
+      "env": {
+        "APIFY_API_TOKEN": "${APIFY_API_TOKEN}"
+      }
+    }
+  },
+  "skill_mcp_mapping": {
+    "lead-analyzer": {
+      "primary": ["playwright", "firecrawl"],
+      "secondary": ["apify", "composio", "sheets"],
+      "workflow": [
+        "1. playwright.navigate → visita sito azienda",
+        "2. playwright.screenshot → screenshot above-fold",
+        "3. playwright.evaluate → estrae tech stack, meta, content",
+        "4. firecrawl.scrape → scrape completo + tech detection",
+        "5. apify.run → (opzionale) Google Maps scraping per trovare +200 aziende",
+        "6. sheets.append → salva lead_analyzed in Google Sheets"
+      ]
+    },
+    "web-demo-generator": {
+      "primary": ["netlify", "vercel"],
+      "secondary": ["playwright"],
+      "workflow": [
+        "1. Genera HTML/CSS/JS da template (locale, no MCP)",
+        "2. playwright.screenshot → screenshot demo per confronto before/after",
+        "3. netlify.deploy → deploy demo su Netlify → URL pubblico",
+        "4. vercel.deploy → (backup) deploy su Vercel",
+        "5. Salva deploy URL in lead data per email"
+      ]
+    },
+    "copywriter-b2b": {
+      "primary": [],
+      "secondary": ["sheets"],
+      "workflow": [
+        "1. Legge lead_analyzed da sheets (input)",
+        "2. Genera 6 email personalizzate (locale, no MCP)",
+        "3. Scrive outbox/ in filesystem",
+        "4. sheets.append → log email_generated per tracking"
+      ]
+    },
+    "email-dispatcher": {
+      "primary": ["agentmail", "sheets"],
+      "secondary": ["vercel", "composio"],
+      "workflow": [
+        "1. sheets.read → legge outbox/batch_YYYYMMDD.json",
+        "2. agentmail.send → invia email con rate limiting",
+        "3. agentmail.webhooks → riceve bounce/complaint/reply/delivery",
+        "4. sheets.append → aggiorna tracking row per ogni evento",
+        "5. agentmail.classify_reply → (via skill) classifica reply",
+        "6. vercel.functions → (opzionale) unsubscribe API endpoint",
+        "7. composio.actions → (backup) CRM sync, Calendly webhook"
+      ]
+    }
+  },
+  "automation_workflow": {
+    "description": "Pipeline completo autonomo - esegui in ordine",
+    "steps": [
+      {
+        "step": 1,
+        "name": "Lead Discovery & Enrichment",
+        "skill": "lead-analyzer",
+        "mcp": ["apify", "playwright", "firecrawl", "sheets"],
+        "input": "icp_definition (settore, geo, size) + companies.csv (domini noti)",
+        "output": "leads_enriched.json + Google Sheets 'Leads' tab",
+        "autonomous": true,
+        "commands": [
+          "apify.run(actor: 'google-maps-scraper', input: {queries: ['presse Brescia', 'macchine utensili Bergamo', ...], maxResults: 200})",
+          "per ogni dominio: playwright.navigate + firecrawl.scrape",
+          "sheets.append(Leads, {company, domain, pain_score, hooks, tier})"
+        ]
+      },
+      {
+        "step": 2,
+        "name": "Demo Generation",
+        "skill": "web-demo-generator",
+        "mcp": ["netlify", "vercel", "playwright"],
+        "input": "leads_enriched.json (solo Tier A + B)",
+        "output": "demos/{slug}/ + deploy URLs in leads_enriched.json",
+        "autonomous": true,
+        "commands": [
+          "per lead Tier A/B: genera HTML/CSS/JS da template",
+          "playwright.screenshot(demo) → before/after",
+          "netlify.deploy(dir: demos/{slug}) → https://demo-zak-{slug}.netlify.app",
+          "aggiorna lead con demo_url"
+        ]
+      },
+      {
+        "step": 3,
+        "name": "Email Writing",
+        "skill": "copywriter-b2b",
+        "mcp": ["sheets"],
+        "input": "leads_enriched.json + sequence-master.json + case studies",
+        "output": "outbox/batch_YYYYMMDD.json + outbox/{slug}/email_1-6.json",
+        "autonomous": true,
+        "commands": [
+          "per lead: genera 6 email con personalizzazione profonda",
+          "analyzer.score ≥ 80 required",
+          "sheets.append(EmailLog, {lead, step, subject, score, status: 'ready'})"
+        ]
+      },
+      {
+        "step": 4,
+        "name": "Email Dispatch & Tracking",
+        "skill": "email-dispatcher",
+        "mcp": ["agentmail", "sheets", "vercel", "composio"],
+        "input": "outbox/batch_YYYYMMDD.json",
+        "output": "Sent emails + real-time tracking in Google Sheets",
+        "autonomous": true,
+        "schedule": "Daily 08:00 (cron)",
+        "commands": [
+          "sheets.read(EmailLog, where: {status: 'ready', send_day: today})",
+          "per email: agentmail.send({rate_limit: 25/day, delay: 2-8min})",
+          "agentmail.webhooks → auto-handle bounce/complaint/reply",
+          "sheets.update(EmailLog, {message_id, delivered, opened, clicked, replied, classification})",
+          "vercel.functions(unsubscribe) → one-click opt-out",
+          "composio.crm.sync → (opzionale) crea deal in HubSpot/Pipedrive"
+        ]
+      },
+      {
+        "step": 5,
+        "name": "Follow-up Automation",
+        "skill": "email-dispatcher + copywriter-b2b",
+        "mcp": ["agentmail", "sheets"],
+        "input": "Replies classification + non-responders",
+        "output": "Next step emails sent / sequences paused",
+        "autonomous": true,
+        "logic": [
+          "IF reply.classification == 'interested' → pause sequence, notify sales, create CRM task",
+          "IF reply.classification == 'not_interested' → pause sequence, log lost reason",
+          "IF reply.classification == 'referral' → pause sequence, add referred contact to leads",
+          "IF reply.classification == 'unsubscribe' → suppression list, pause sequence",
+          "IF no_reply AND day == send_day(step+1) → send next step email",
+          "IF day > 35 (breakup sent) → mark sequence complete"
+        ]
+      }
+    ]
+  },
+  "environment_variables": {
+    "required": [
+      "AGENTMAIL_API_KEY",
+      "AGENTMAIL_WEBHOOK_SECRET",
+      "FIRECRAWL_API_KEY",
+      "GOOGLE_SHEETS_CREDENTIALS",
+      "NETLIFY_AUTH_TOKEN",
+      "VERCEL_TOKEN",
+      "APIFY_API_TOKEN",
+      "COMPOSIO_API_KEY",
+      "PAGESPEED_API_KEY",
+      "ZEROBOUNCE_API_KEY",
+      "UNSUB_SECRET",
+      "CALENDLY_USERNAME"
+    ],
+    "optional": [
+      "RESEND_API_KEY",
+      "SENDGRID_API_KEY",
+      "HUBSPOT_API_KEY",
+      "PIPEDRIVE_API_KEY"
+    ]
+  },
+  "google_sheets_structure": {
+    "spreadsheet_id": "${GOOGLE_SHEETS_TRACKING_ID}",
+    "tabs": {
+      "Leads": {
+        "columns": ["lead_id", "company", "domain", "decision_maker", "title", "sector", "employees", "location", "pain_score", "tier", "hooks_json", "demo_url", "status", "created_at", "updated_at"],
+        "description": "Master lead database da lead-analyzer"
+      },
+      "EmailLog": {
+        "columns": ["log_id", "lead_id", "step", "subject", "sent_at", "message_id", "delivered_at", "opened_at", "clicked_at", "replied_at", "bounced_at", "complained_at", "unsubscribed_at", "reply_classification", "status", "analyzer_score"],
+        "description": "Tracking completo ogni email inviata"
+      },
+      "Suppression": {
+        "columns": ["email", "reason", "date_added", "source", "notes"],
+        "description": "Suppression list sync (locale + ESP + Sheets)"
+      },
+      "Demoss": {
+        "columns": ["demo_id", "lead_id", "slug", "netlify_url", "vercel_url", "screenshot_before", "screenshot_after", "deployed_at"],
+        "description": "Demo generate e deployate"
+      }
+    }
+  }
+}

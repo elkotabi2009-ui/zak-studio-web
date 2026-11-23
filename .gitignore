@@ -1,0 +1,42 @@
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Vercel
+.vercel
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+.tox/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Output
+outbox/
+03-output/
+
+# Local data
+02-data/*.json
+!02-data/leads_enriched.json
+!02-data/suppression-list.csv
+
+# Temporary
+*.tmp
+*.temp

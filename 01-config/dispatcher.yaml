@@ -1,0 +1,113 @@
+﻿# Email Dispatcher Configuration
+# 08-claude-code/custom-skills/email-dispatcher/config/dispatcher.yaml
+
+sender:
+  from_email: "zakariae@outreach.zakstudio.com"
+  from_name: "Zakariae El Kotabi — ZAK Studio Web"
+  reply_to: "zakariae@outreach.zakstudio.com"
+
+esp:
+  provider: "resend"
+  agentmail:
+    api_key_env: "AGENTMAIL_API_KEY"
+    inbox_id: "outreach-zakstudio"
+  resend:
+    api_key_env: "RESEND_API_KEY"
+    domain: "resend.dev"
+    test_mode: true
+    test_from: "onboarding@resend.dev"
+    test_to: "elkotabi2009@gmail.com"
+
+rate_limits:
+  max_per_day: 25
+  min_interval_minutes: 2
+  max_interval_minutes: 8
+  warmup_schedule:
+    week_1: 10
+    week_2: 15
+    week_3: 20
+    week_4_plus: 25
+
+tracking:
+  open_tracking: false
+  click_tracking: true
+  utm_params:
+    source: "cold_email"
+    medium: "email"
+    campaign: "zak_web_outreach_2026"
+
+suppression:
+  local_file: "02-data/suppression-list.csv"
+  esp_sync: true
+  sheets_sync: true
+  sheets_id: "1hD75vPwnT0SYpF-2rvZqbDfVu5kpe8onoZcM_Q06BRA"
+  sheets_tab: "Suppression"
+
+google_sheets:
+  credentials_env: "GOOGLE_SHEETS_CREDENTIALS"
+  tracking_sheet_id: "1hD75vPwnT0SYpF-2rvZqbDfVu5kpe8onoZcM_Q06BRA"
+  tracking_tab: "Tracking"
+  columns:
+    - timestamp
+    - lead_slug
+    - company
+    - step
+    - subject
+    - message_id
+    - status_sent
+    - status_delivered
+    - status_opened
+    - status_clicked
+    - status_replied
+    - status_bounced
+    - status_complained
+    - status_unsubscribed
+    - reply_classification
+    - notes
+
+reply_classification:
+  keywords:
+    interested:
+      - "interessato"
+      - "call"
+      - "incontro"
+      - "parliamo"
+      - "disponibile"
+      - "come funziona"
+      - "costo"
+      - "prezzo"
+      - "demo"
+      - "vediamo"
+      - "info"
+      - "dettagli"
+    not_interested:
+      - "non interessa"
+      - "non serve"
+      - "già sito"
+      - "fatto interno"
+      - "no grazie"
+      - "rimuovimi"
+      - "cancellami"
+      - "non voglio"
+    referral:
+      - "inoltro"
+      - "collega"
+      - "persona giusta"
+      - "responsabile"
+      - "passo al"
+      - "contattate"
+      - "girato"
+    unsubscribe:
+      - "disiscrivi"
+      - "rimuovi"
+      - "cancella"
+      - "unsubscribe"
+      - "opt out"
+      - "non voglio più"
+  default: "unknown"
+  webhook_url: "https://api.zakstudio.com/webhooks/email/reply"
+
+legal:
+  unsubscribe_base_url: "https://unsubscribe.zakstudio.com/"
+  footer_template: "01-config/legal-compliance.md"
+  max_per_domain_per_day: 50

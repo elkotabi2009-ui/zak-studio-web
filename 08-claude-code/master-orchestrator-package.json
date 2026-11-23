@@ -1,0 +1,22 @@
+{
+  "name": "@zakstudio/master-orchestrator",
+  "version": "1.0.0",
+  "description": "Master orchestrator for autonomous B2B outreach system",
+  "main": "dist/master-orchestrator.js",
+  "types": "dist/master-orchestrator.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/master-orchestrator.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "node-schedule": "^2.1.1",
+    "googleapis": "^134.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "@types/node-schedule": "^2.1.6",
+    "typescript": "^5.4.0"
+  }
+}

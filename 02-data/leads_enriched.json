@@ -1,0 +1,950 @@
+[
+  {
+    "company": "Esempio Meccanica Srl",
+    "domain": "esempromeccanica.it",
+    "slug": "esempromeccanica-srl",
+    "decision_maker": "Mario Rossi",
+    "title": "Titolare / CEO",
+    "sector": "Manifatturiero",
+    "employees": 20,
+    "location": "Nord Italia",
+    "revenue_est": "N/A",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 78,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "manifatturiero"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 78/100",
+        "severity": "high",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 78,
+    "priority_tier": "A",
+    "personalization_hooks": [
+      "Il sito mobile fa 78/100 su PageSpeed — i buyer che cercano 'manifatturiero' da telefono non convertono...",
+      "Mancano dati strutturati schema.org: Google non capisce che siete produttori certificati, perdete traffico qualificato...",
+      "L'ultimo aggiornamento contenuti risale a tempo fa — i nuovi prodotti non hanno pagine dedicate con schede tecniche scaricabili..."
+    ],
+    "screenshot_path": "screenshots/esempromeccanica.it_20261122_103000.png",
+    "recommended_angle": "performance_export",
+    "estimated_gap_leads_month": 7,
+    "demo_url": "https://demo-zak-esempromeccanica-srl.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    },
+    "decision_maker_email": "mario.rossi@esempromeccanica.it"
+  },
+  {
+    "company": "NRCM Srl",
+    "domain": "nrcm.it",
+    "slug": "nrcm-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Manifatturiero meccanico",
+    "employees": 45,
+    "location": "Brescia (BS)",
+    "revenue_est": "10M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 50,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "manifatturiero meccanico"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 50/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 50,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito gira su tecnologia legacy (EOL/Nessun CMS moderno) — rischio sicurezza, plugin rotti, zero scalabilità...",
+      "Nessun CI/CD — deploy manuali, rischio errori, niente rollback automatico...",
+      "Hosting shared con risorse limitate — downtime frequenti, niente scaling, zero observability..."
+    ],
+    "screenshot_path": "screenshots/nrcm.it_20261122_103000.png",
+    "recommended_angle": "tech_modernization",
+    "estimated_gap_leads_month": 11,
+    "demo_url": "https://demo-zak-nrcm-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    },
+    "decision_maker_email": "ceo@nrcm.it"
+  },
+  {
+    "company": "Sigma Presse Srl",
+    "domain": "sigmapresse.it",
+    "slug": "sigmapresse-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Manifatturiero meccanico",
+    "employees": 35,
+    "location": "Brescia (BS)",
+    "revenue_est": "8M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 45,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "manifatturiero meccanico"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 45/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 45,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito mobile fa 45/100 su PageSpeed — i buyer che cercano 'manifatturiero meccanico' da telefono non convertono...",
+      "Mancano dati strutturati schema.org: Google non capisce che siete produttori certificati, perdete traffico qualificato...",
+      "L'ultimo aggiornamento contenuti risale a tempo fa — i nuovi prodotti non hanno pagine dedicate con schede tecniche scaricabili..."
+    ],
+    "screenshot_path": "screenshots/sigmapresse.it_20261122_103000.png",
+    "recommended_angle": "performance_export",
+    "estimated_gap_leads_month": 7,
+    "demo_url": "https://demo-zak-sigmapresse-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    },
+    "decision_maker_email": "direttore@sigmapresse.it"
+  },
+  {
+    "company": "Hidro-Press Srl",
+    "domain": "hidro-press.it",
+    "slug": "hidro-press-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Manifatturiero meccanico",
+    "employees": 28,
+    "location": "Brescia (BS)",
+    "revenue_est": "5M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 50,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "manifatturiero meccanico"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 50/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 50,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito gira su tecnologia legacy (EOL/Nessun CMS moderno) — rischio sicurezza, plugin rotti, zero scalabilità...",
+      "Nessun CI/CD — deploy manuali, rischio errori, niente rollback automatico...",
+      "Hosting shared con risorse limitate — downtime frequenti, niente scaling, zero observability..."
+    ],
+    "screenshot_path": "screenshots/hidro-press.it_20261122_103000.png",
+    "recommended_angle": "tech_modernization",
+    "estimated_gap_leads_month": 6,
+    "demo_url": "https://demo-zak-hidro-press-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Siderurgica Presse Srl",
+    "domain": "siderurgicapresse.it",
+    "slug": "siderurgicapresse-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Manifatturiero meccanico",
+    "employees": 50,
+    "location": "Castenedolo (BS)",
+    "revenue_est": "15M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 50,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "manifatturiero meccanico"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 50/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 50,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito gira su tecnologia legacy (EOL/Nessun CMS moderno) — rischio sicurezza, plugin rotti, zero scalabilità...",
+      "Nessun CI/CD — deploy manuali, rischio errori, niente rollback automatico...",
+      "Hosting shared con risorse limitate — downtime frequenti, niente scaling, zero observability..."
+    ],
+    "screenshot_path": "screenshots/siderurgicapresse.it_20261122_103000.png",
+    "recommended_angle": "tech_modernization",
+    "estimated_gap_leads_month": 12,
+    "demo_url": "https://demo-zak-siderurgicapresse-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Techno Press Srl",
+    "domain": "technopress.it",
+    "slug": "technopress-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Manifatturiero meccanico",
+    "employees": 22,
+    "location": "Brescia (BS)",
+    "revenue_est": "4M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 50,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "manifatturiero meccanico"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 50/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 50,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito gira su tecnologia legacy (EOL/Nessun CMS moderno) — rischio sicurezza, plugin rotti, zero scalabilità...",
+      "Nessun CI/CD — deploy manuali, rischio errori, niente rollback automatico...",
+      "Hosting shared con risorse limitate — downtime frequenti, niente scaling, zero observability..."
+    ],
+    "screenshot_path": "screenshots/technopress.it_20261122_103000.png",
+    "recommended_angle": "tech_modernization",
+    "estimated_gap_leads_month": 5,
+    "demo_url": "https://demo-zak-technopress-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Berco Spa",
+    "domain": "berco.it",
+    "slug": "berco-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Macchine utensili",
+    "employees": 120,
+    "location": "Bergamo (BG)",
+    "revenue_est": "50M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 50,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "macchine utensili"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 50/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 50,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito gira su tecnologia legacy (EOL/Nessun CMS moderno) — rischio sicurezza, plugin rotti, zero scalabilità...",
+      "Nessun CI/CD — deploy manuali, rischio errori, niente rollback automatico...",
+      "Hosting shared con risorse limitate — downtime frequenti, niente scaling, zero observability..."
+    ],
+    "screenshot_path": "screenshots/berco.it_20261122_103000.png",
+    "recommended_angle": "tech_modernization",
+    "estimated_gap_leads_month": 30,
+    "demo_url": "https://demo-zak-berco-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "CMS SpA",
+    "domain": "cms-group.it",
+    "slug": "cms-group-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Macchine utensili",
+    "employees": 80,
+    "location": "Bergamo (BG)",
+    "revenue_est": "30M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 50,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "macchine utensili"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 50/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 50,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito gira su tecnologia legacy (EOL/Nessun CMS moderno) — rischio sicurezza, plugin rotti, zero scalabilità...",
+      "Nessun CI/CD — deploy manuali, rischio errori, niente rollback automatico...",
+      "Hosting shared con risorse limitate — downtime frequenti, niente scaling, zero observability..."
+    ],
+    "screenshot_path": "screenshots/cms-group.it_20261122_103000.png",
+    "recommended_angle": "tech_modernization",
+    "estimated_gap_leads_month": 19,
+    "demo_url": "https://demo-zak-cms-group-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Fidia Spa",
+    "domain": "fidia.com",
+    "slug": "fidia-com",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Macchine utensili",
+    "employees": 60,
+    "location": "Bergamo (BG)",
+    "revenue_est": "25M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 45,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "macchine utensili"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 45/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 45,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito mobile fa 45/100 su PageSpeed — i buyer che cercano 'macchine utensili' da telefono non convertono...",
+      "Mancano dati strutturati schema.org: Google non capisce che siete produttori certificati, perdete traffico qualificato...",
+      "L'ultimo aggiornamento contenuti risale a tempo fa — i nuovi prodotti non hanno pagine dedicate con schede tecniche scaricabili..."
+    ],
+    "screenshot_path": "screenshots/fidia.com_20261122_103000.png",
+    "recommended_angle": "performance_export",
+    "estimated_gap_leads_month": 13,
+    "demo_url": "https://demo-zak-fidia-com.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Omg Spa",
+    "domain": "omgspa.it",
+    "slug": "omgspa-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Macchine utensili",
+    "employees": 40,
+    "location": "Bergamo (BG)",
+    "revenue_est": "12M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 50,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "macchine utensili"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 50/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 50,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito gira su tecnologia legacy (EOL/Nessun CMS moderno) — rischio sicurezza, plugin rotti, zero scalabilità...",
+      "Nessun CI/CD — deploy manuali, rischio errori, niente rollback automatico...",
+      "Hosting shared con risorse limitate — downtime frequenti, niente scaling, zero observability..."
+    ],
+    "screenshot_path": "screenshots/omgspa.it_20261122_103000.png",
+    "recommended_angle": "tech_modernization",
+    "estimated_gap_leads_month": 9,
+    "demo_url": "https://demo-zak-omgspa-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Giuliani Macchine Srl",
+    "domain": "giulianimacchine.it",
+    "slug": "giulianimacchine-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Macchine utensili",
+    "employees": 18,
+    "location": "Bergamo (BG)",
+    "revenue_est": "3M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 50,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "macchine utensili"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 50/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 50,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito gira su tecnologia legacy (EOL/Nessun CMS moderno) — rischio sicurezza, plugin rotti, zero scalabilità...",
+      "Nessun CI/CD — deploy manuali, rischio errori, niente rollback automatico...",
+      "Hosting shared con risorse limitate — downtime frequenti, niente scaling, zero observability..."
+    ],
+    "screenshot_path": "screenshots/giulianimacchine.it_20261122_103000.png",
+    "recommended_angle": "tech_modernization",
+    "estimated_gap_leads_month": 5,
+    "demo_url": "https://demo-zak-giulianimacchine-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Metallistamp Srl",
+    "domain": "metallistamp.it",
+    "slug": "metallistamp-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Stampaggio metalli",
+    "employees": 55,
+    "location": "Milano (MI)",
+    "revenue_est": "20M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 50,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "stampaggio metalli"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 50/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 50,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito gira su tecnologia legacy (EOL/Nessun CMS moderno) — rischio sicurezza, plugin rotti, zero scalabilità...",
+      "Nessun CI/CD — deploy manuali, rischio errori, niente rollback automatico...",
+      "Hosting shared con risorse limitate — downtime frequenti, niente scaling, zero observability..."
+    ],
+    "screenshot_path": "screenshots/metallistamp.it_20261122_103000.png",
+    "recommended_angle": "tech_modernization",
+    "estimated_gap_leads_month": 13,
+    "demo_url": "https://demo-zak-metallistamp-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Stampitalia Srl",
+    "domain": "stampitalia.it",
+    "slug": "stampitalia-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Stampaggio metalli",
+    "employees": 30,
+    "location": "Milano (MI)",
+    "revenue_est": "6M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 50,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "stampaggio metalli"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 50/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 50,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito gira su tecnologia legacy (EOL/Nessun CMS moderno) — rischio sicurezza, plugin rotti, zero scalabilità...",
+      "Nessun CI/CD — deploy manuali, rischio errori, niente rollback automatico...",
+      "Hosting shared con risorse limitate — downtime frequenti, niente scaling, zero observability..."
+    ],
+    "screenshot_path": "screenshots/stampitalia.it_20261122_103000.png",
+    "recommended_angle": "tech_modernization",
+    "estimated_gap_leads_month": 7,
+    "demo_url": "https://demo-zak-stampitalia-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Lamera Srl",
+    "domain": "lamera.it",
+    "slug": "lamera-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Stampaggio metalli",
+    "employees": 25,
+    "location": "Milano (MI)",
+    "revenue_est": "5M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 50,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "stampaggio metalli"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 50/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 50,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito gira su tecnologia legacy (EOL/Nessun CMS moderno) — rischio sicurezza, plugin rotti, zero scalabilità...",
+      "Nessun CI/CD — deploy manuali, rischio errori, niente rollback automatico...",
+      "Hosting shared con risorse limitate — downtime frequenti, niente scaling, zero observability..."
+    ],
+    "screenshot_path": "screenshots/lamera.it_20261122_103000.png",
+    "recommended_angle": "tech_modernization",
+    "estimated_gap_leads_month": 6,
+    "demo_url": "https://demo-zak-lamera-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Evos Srl",
+    "domain": "evos.it",
+    "slug": "evos-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Stampaggio metalli",
+    "employees": 35,
+    "location": "Milano (MI)",
+    "revenue_est": "8M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 65,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "stampaggio metalli"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 65/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 65,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito mobile fa 65/100 su PageSpeed — i buyer che cercano 'stampaggio metalli' da telefono non convertono...",
+      "Mancano dati strutturati schema.org: Google non capisce che siete produttori certificati, perdete traffico qualificato...",
+      "L'ultimo aggiornamento contenuti risale a tempo fa — i nuovi prodotti non hanno pagine dedicate con schede tecniche scaricabili..."
+    ],
+    "screenshot_path": "screenshots/evos.it_20261122_103000.png",
+    "recommended_angle": "performance_export",
+    "estimated_gap_leads_month": 10,
+    "demo_url": "https://demo-zak-evos-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Minifaber Srl",
+    "domain": "minifaber.com",
+    "slug": "minifaber-com",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Stampaggio metalli",
+    "employees": 45,
+    "location": "Milano (MI)",
+    "revenue_est": "10M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 45,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "stampaggio metalli"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 45/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 45,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito mobile fa 45/100 su PageSpeed — i buyer che cercano 'stampaggio metalli' da telefono non convertono...",
+      "Mancano dati strutturati schema.org: Google non capisce che siete produttori certificati, perdete traffico qualificato...",
+      "L'ultimo aggiornamento contenuti risale a tempo fa — i nuovi prodotti non hanno pagine dedicate con schede tecniche scaricabili..."
+    ],
+    "screenshot_path": "screenshots/minifaber.com_20261122_103000.png",
+    "recommended_angle": "performance_export",
+    "estimated_gap_leads_month": 10,
+    "demo_url": "https://demo-zak-minifaber-com.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Camozzi Automation",
+    "domain": "camozzi.com",
+    "slug": "camozzi-com",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Automazione industriale",
+    "employees": 200,
+    "location": "Vicenza (VI)",
+    "revenue_est": "100M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 45,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "automazione industriale"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 45/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 45,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito mobile fa 45/100 su PageSpeed — i buyer che cercano 'automazione industriale' da telefono non convertono...",
+      "Mancano dati strutturati schema.org: Google non capisce che siete produttori certificati, perdete traffico qualificato...",
+      "L'ultimo aggiornamento contenuti risale a tempo fa — i nuovi prodotti non hanno pagine dedicate con schede tecniche scaricabili..."
+    ],
+    "screenshot_path": "screenshots/camozzi.com_20261122_103000.png",
+    "recommended_angle": "performance_export",
+    "estimated_gap_leads_month": 44,
+    "demo_url": "https://demo-zak-camozzi-com.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Euchner Italia Srl",
+    "domain": "euchner.it",
+    "slug": "euchner-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Automazione industriale",
+    "employees": 40,
+    "location": "Vicenza (VI)",
+    "revenue_est": "10M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 50,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "automazione industriale"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 50/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 50,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito gira su tecnologia legacy (EOL/Nessun CMS moderno) — rischio sicurezza, plugin rotti, zero scalabilità...",
+      "Nessun CI/CD — deploy manuali, rischio errori, niente rollback automatico...",
+      "Hosting shared con risorse limitate — downtime frequenti, niente scaling, zero observability..."
+    ],
+    "screenshot_path": "screenshots/euchner.it_20261122_103000.png",
+    "recommended_angle": "tech_modernization",
+    "estimated_gap_leads_month": 9,
+    "demo_url": "https://demo-zak-euchner-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "SMC Italia",
+    "domain": "smcitalia.it",
+    "slug": "smcitalia-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Automazione industriale",
+    "employees": 150,
+    "location": "Vicenza (VI)",
+    "revenue_est": "80M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 65,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "automazione industriale"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 65/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 65,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito mobile fa 65/100 su PageSpeed — i buyer che cercano 'automazione industriale' da telefono non convertono...",
+      "Mancano dati strutturati schema.org: Google non capisce che siete produttori certificati, perdete traffico qualificato...",
+      "L'ultimo aggiornamento contenuti risale a tempo fa — i nuovi prodotti non hanno pagine dedicate con schede tecniche scaricabili..."
+    ],
+    "screenshot_path": "screenshots/smcitalia.it_20261122_103000.png",
+    "recommended_angle": "performance_export",
+    "estimated_gap_leads_month": 48,
+    "demo_url": "https://demo-zak-smcitalia-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Festo Italia",
+    "domain": "festo.it",
+    "slug": "festo-it",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Automazione industriale",
+    "employees": 180,
+    "location": "Vicenza (VI)",
+    "revenue_est": "90M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 45,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "automazione industriale"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 45/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 45,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito mobile fa 45/100 su PageSpeed — i buyer che cercano 'automazione industriale' da telefono non convertono...",
+      "Mancano dati strutturati schema.org: Google non capisce che siete produttori certificati, perdete traffico qualificato...",
+      "L'ultimo aggiornamento contenuti risale a tempo fa — i nuovi prodotti non hanno pagine dedicate con schede tecniche scaricabili..."
+    ],
+    "screenshot_path": "screenshots/festo.it_20261122_103000.png",
+    "recommended_angle": "performance_export",
+    "estimated_gap_leads_month": 40,
+    "demo_url": "https://demo-zak-festo-it.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  },
+  {
+    "company": "Pizzato Elettrica",
+    "domain": "pizzato.com",
+    "slug": "pizzato-com",
+    "decision_maker": "Titolare / CEO",
+    "title": "Titolare / CEO",
+    "sector": "Automazione industriale",
+    "employees": 60,
+    "location": "Vicenza (VI)",
+    "revenue_est": "15M€",
+    "analysis_timestamp": "2026-11-22T10:30:00Z",
+    "tech_stack": {
+      "cms": "Unknown",
+      "page_speed_mobile": 55,
+      "page_speed_desktop": 67
+    },
+    "content_signals": {
+      "has_schema_org": false,
+      "export_keywords": [
+        "automazione industriale"
+      ]
+    },
+    "pain_signals": [
+      {
+        "signal": "Pain score 55/100",
+        "severity": "medium",
+        "category": "performance"
+      }
+    ],
+    "pain_score": 55,
+    "priority_tier": "B",
+    "personalization_hooks": [
+      "Il sito mobile fa 55/100 su PageSpeed — i buyer che cercano 'automazione industriale' da telefono non convertono...",
+      "Mancano dati strutturati schema.org: Google non capisce che siete produttori certificati, perdete traffico qualificato...",
+      "L'ultimo aggiornamento contenuti risale a tempo fa — i nuovi prodotti non hanno pagine dedicate con schede tecniche scaricabili..."
+    ],
+    "screenshot_path": "screenshots/pizzato.com_20261122_103000.png",
+    "recommended_angle": "performance_export",
+    "estimated_gap_leads_month": 16,
+    "demo_url": "https://demo-zak-pizzato-com.netlify.app",
+    "demo_deploy": {
+      "success": false,
+      "error": "'charmap' codec can't encode characters in position 2-3: character maps to <undefined>"
+    }
+  }
+]

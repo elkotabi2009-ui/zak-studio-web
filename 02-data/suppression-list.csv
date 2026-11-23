@@ -1,0 +1,6 @@
+email,reason,date_added,source,notes
+"optout@example.com","unsubscribe","2026-01-15","email_footer","Clicked unsubscribe link in email #3"
+"bounce@example.com","hard_bounce","2026-01-10","esp_webhook","550 5.1.1 User unknown"
+"complaint@example.com","spam_complaint","2026-01-08","esp_feedback_loop","FBL report from provider"
+"admin@azienza.it","generic_role","2026-01-01","manual_review","Role account, not decision maker"
+"info@azienda.it","generic_role","2026-01-01","manual_review","Role account, not decision maker"
