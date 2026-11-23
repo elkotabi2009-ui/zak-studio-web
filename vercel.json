@@ -1,13 +1,7 @@
 {
   "version": 2,
-  "buildCommand": "pip install -r requirements.txt",
   "framework": null,
-  "functions": {
-    "api/handler.py": {
-      "runtime": "python@3.11",
-      "maxDuration": 30
-    }
-  },
+  "buildCommand": "pip install -r requirements.txt",
   "routes": [
     {
       "src": "/api/webhooks/email/(.*)",
