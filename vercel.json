@@ -1,8 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "pip install -r requirements.txt && pip install httpx pyyaml python-dotenv jinja2 google-api-python-client google-auth google-auth-httplib2",
-  "installCommand": "pip install -r requirements.txt && pip install httpx pyyaml python-dotenv jinja2 google-api-python-client google-auth google-auth-httplib2",
-  "devCommand": "python api/handler.py",
+  "buildCommand": "pip install -r requirements.txt",
   "framework": null,
   "functions": {
     "api/handler.py": {
